@@ -1,5 +1,38 @@
 const libary = [];
 const bookDisplay = document.querySelector(".books");
+const addBookButton = document.querySelector(".add-book");
+const form = document.querySelector("dialog");
+const formClose = document.querySelector(".close");
+const formSubmit = document.querySelector(".submit");
+const formTitle = document.querySelector("#title");
+const formAuthor = document.querySelector("#author");
+const formPages = document.querySelector("#pages");
+const formRead = document.querySelector("#read");
+
+addBookButton.addEventListener("click", (e) => {
+  form.showModal();
+});
+
+formClose.addEventListener("click", (e) => {
+  console.log("hi");
+  form.close();
+});
+
+formSubmit.addEventListener("click", (e) => {
+  e.preventDefault();
+  addBookToLibary(
+    formTitle.value,
+    formAuthor.value,
+    formPages.value,
+    formRead.checked
+  );
+  form.close();
+  formTitle.value = "";
+  formAuthor.value = "";
+  formPages.value = "";
+  formRead.checked = false;
+  displayBooks();
+});
 
 function Book(title, author, pages, read) {
   this.id = crypto.randomUUID();
