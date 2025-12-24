@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  background-color: aliceblue;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+.add-book {
+  border: none;
+  background-color: aquamarine;
+  font-family: inherit;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 16px;
+}
