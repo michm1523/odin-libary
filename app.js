@@ -83,6 +83,7 @@ function displayBooks() {
     readButton.textContent = book.read ? "Mark as unread" : "Mark as read";
     readButton.addEventListener("click", (e) => {
       book.read = !book.read;
+      e.target.parentElement.parentElement.classList.toggle("read");
       displayBooks();
     });
 
