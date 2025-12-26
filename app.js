@@ -1,4 +1,4 @@
-const libary = [];
+let libary = [];
 const bookDisplay = document.querySelector(".books");
 const addBookButton = document.querySelector(".add-book");
 const form = document.querySelector("dialog");
@@ -89,7 +89,14 @@ function displayBooks() {
     const deleteButton = document.createElement("button");
     deleteButton.classList.add("delete-button");
     deleteButton.setAttribute("type", "button");
+    deleteButton.setAttribute("data-id", book.id);
     deleteButton.textContent = "Delete";
+    deleteButton.addEventListener("click", (e) => {
+      libary = libary.filter(
+        (book) => book.id != e.target.getAttribute("data-id")
+      );
+      displayBooks();
+    });
 
     buttonContainer.appendChild(readButton);
     buttonContainer.appendChild(deleteButton);
@@ -98,8 +105,5 @@ function displayBooks() {
     bookDisplay.appendChild(card);
   }
 }
-
-addBookToLibary("idk", "safds", 1232, true);
-addBookToLibary("idk2", "safdsafds", 210, false);
 
 displayBooks();
