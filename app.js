@@ -3,7 +3,7 @@ const bookDisplay = document.querySelector(".books");
 const addBookButton = document.querySelector(".add-book");
 const form = document.querySelector("dialog");
 const formClose = document.querySelector(".close");
-const formSubmit = document.querySelector(".submit");
+const formSubmit = document.querySelector("form");
 const formTitle = document.querySelector("#title");
 const formAuthor = document.querySelector("#author");
 const formPages = document.querySelector("#pages");
@@ -18,7 +18,7 @@ formClose.addEventListener("click", (e) => {
   form.close();
 });
 
-formSubmit.addEventListener("click", (e) => {
+formSubmit.addEventListener("submit", (e) => {
   e.preventDefault();
   addBookToLibary(
     formTitle.value,
