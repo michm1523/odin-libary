@@ -47,7 +47,7 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 24px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .card {
